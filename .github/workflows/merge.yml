@@ -3,18 +3,22 @@ name: Merge Files
 env:
   ACTION_MAIL: "o.gruetzmann@gmail.com"
   ACTION_NAME: "ogruetzmann"
-  FILENAME_AIRCRAFT_INFO: "GRpluginAircraftInfo"
-  FILENAME_CALLSIGNS: "GRpluginCallsigns"
-  FILENAME_CARGO_CALLSIGNS: "GRpluginCargoCallsigns"
-  FILENAME_MAPS: "GRpluginMaps"
-  FILENAME_OPERATOR_INFO: "GRpluginOperatorInfo"
-  FILENAME_SETTINGS: "GRpluginSettings"
-  FILENAME_STANDS: "GRpluginStands"
+  FILENAME_AIRSPACE: "TopSkyAirspace"
+  FILENAME_AREAS: "TopSkyAreas"
+  FILENAME_CALLSIGNS: "TopSkyCallsigns"
+  FILENAME_CPDLC: "TopSkyCPDLC"
+  FILENAME_MAPS: "TopSkyMaps"
+  FILENAME_MSAW: "TopSkyMSAW"
+  FILENAME_SETTINGS: "TopSkySettings"
+  FILENAME_SSR: "TopSkySSRcodes"
+  FILENAME_STCA: "TopSkySTCA"
+  FILENAME_SYMBOLS: "TopSkySymbols"
+  FILENAME_VIEWS: "TopSkyViews"
 
 on:
   push:
     paths: 
-      - 'GRplugin*/*'
+      - '**/TopSky*/*'
 
 jobs:
     Merge:
@@ -24,23 +28,31 @@ jobs:
             uses: actions/checkout@v2
           - name: Set Branch
             run: echo "ACTION_BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
-          - name: Merge GRpluginAircraftInfo
-            run: cat $GITHUB_WORKSPACE/$FILENAME_AIRCRAFT_INFO/*.txt >> $FILENAME_AIRCRAFT_INFO.txt
-          - name: Merge GRpluginCallsigns
+          - name: Merge TopSkyAirspace
+            run: cat $GITHUB_WORKSPACE/$FILENAME_AIRSPACE/*.txt >> $FILENAME_AIRSPACE.txt
+          - name: Merge TopSkyAreas
+            run: cat $GITHUB_WORKSPACE/$FILENAME_AREAS/*.txt >> $FILENAME_AREAS.txt
+          - name: Merge TopSkyCallsigns
             run: cat $GITHUB_WORKSPACE/$FILENAME_CALLSIGNS/*.txt >> $FILENAME_CALLSIGNS.txt
-          - name: Merge GRpluginCargoCallsigns
-            run: cat $GITHUB_WORKSPACE/$FILENAME_CARGO_CALLSIGNS/*.txt >> $FILENAME_CARGO_CALLSIGNS.txt
-          - name: Merge GRpluginMaps
+          - name: Merge TopSkyCPDLC
+            run: cat $GITHUB_WORKSPACE/$FILENAME_CPDLC/*.txt >> $FILENAME_CPDLC.txt
+          - name: Merge TopSkyMaps
             run: cat $GITHUB_WORKSPACE/$FILENAME_MAPS/*.txt >> $FILENAME_MAPS.txt
-          - name: Merge GRpluginOperatorInfo
-            run: cat $GITHUB_WORKSPACE/$FILENAME_OPERATOR_INFO/*.txt >> $FILENAME_OPERATOR_INFO.txt
-          - name: Merge GRpluginSettings
+          - name: Merge TopSkyMSAW
+            run: cat $GITHUB_WORKSPACE/$FILENAME_MSAW/*.txt >> $FILENAME_MSAW.txt
+          - name: Merge TopSkySettings
             run: cat $GITHUB_WORKSPACE/$FILENAME_SETTINGS/*.txt >> $FILENAME_SETTINGS.txt
-          - name: Merge GRpluginStands
-            run: cat $GITHUB_WORKSPACE/$FILENAME_STANDS/*.txt >> $FILENAME_STANDS.txt
+          - name: Merge TopSkySSRcodes
+            run: cat $GITHUB_WORKSPACE/$FILENAME_SSR/*.txt >> $FILENAME_SSR.txt
+          - name: Merge TopSkySTCA
+            run: cat $GITHUB_WORKSPACE/$FILENAME_STCA/*.txt >> $FILENAME_STCA.txt
+          - name: Merge TopSkySymbols
+            run: cat $GITHUB_WORKSPACE/$FILENAME_SYMBOLS/*.txt >> $FILENAME_SYMBOLS.txt
+          - name: Merge TopSkyViews
+            run: cat $GITHUB_WORKSPACE/$FILENAME_VIEWS/*.txt >> $FILENAME_VIEWS.txt
           - name: Remove Old Files
-            run: rm ./Release/*
+            run: rm -rf ./Release/ > /dev/null
           - name: Move Files
-            run: mv *.txt ./Release/
+            run: mkdir Release && mv *.txt ./Release/
           - name: Push
             uses: ludeeus/action-push@0.0.1
