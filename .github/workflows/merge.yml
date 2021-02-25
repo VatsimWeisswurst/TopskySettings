@@ -1,0 +1,46 @@
+name: Merge Files
+
+env:
+  ACTION_MAIL: "o.gruetzmann@gmail.com"
+  ACTION_NAME: "ogruetzmann"
+  FILENAME_AIRCRAFT_INFO: "GRpluginAircraftInfo"
+  FILENAME_CALLSIGNS: "GRpluginCallsigns"
+  FILENAME_CARGO_CALLSIGNS: "GRpluginCargoCallsigns"
+  FILENAME_MAPS: "GRpluginMaps"
+  FILENAME_OPERATOR_INFO: "GRpluginOperatorInfo"
+  FILENAME_SETTINGS: "GRpluginSettings"
+  FILENAME_STANDS: "GRpluginStands"
+
+on:
+  push:
+    paths: 
+      - 'GRplugin*/*'
+
+jobs:
+    Merge:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+          - name: Set Branch
+            run: echo "ACTION_BRANCH=${GITHUB_REF##*/}" >> $GITHUB_ENV
+          - name: Merge GRpluginAircraftInfo
+            run: cat $GITHUB_WORKSPACE/$FILENAME_AIRCRAFT_INFO/*.txt >> $FILENAME_AIRCRAFT_INFO.txt
+          - name: Merge GRpluginCallsigns
+            run: cat $GITHUB_WORKSPACE/$FILENAME_CALLSIGNS/*.txt >> $FILENAME_CALLSIGNS.txt
+          - name: Merge GRpluginCargoCallsigns
+            run: cat $GITHUB_WORKSPACE/$FILENAME_CARGO_CALLSIGNS/*.txt >> $FILENAME_CARGO_CALLSIGNS.txt
+          - name: Merge GRpluginMaps
+            run: cat $GITHUB_WORKSPACE/$FILENAME_MAPS/*.txt >> $FILENAME_MAPS.txt
+          - name: Merge GRpluginOperatorInfo
+            run: cat $GITHUB_WORKSPACE/$FILENAME_OPERATOR_INFO/*.txt >> $FILENAME_OPERATOR_INFO.txt
+          - name: Merge GRpluginSettings
+            run: cat $GITHUB_WORKSPACE/$FILENAME_SETTINGS/*.txt >> $FILENAME_SETTINGS.txt
+          - name: Merge GRpluginStands
+            run: cat $GITHUB_WORKSPACE/$FILENAME_STANDS/*.txt >> $FILENAME_STANDS.txt
+          - name: Remove Old Files
+            run: rm ./Release/*
+          - name: Move Files
+            run: mv *.txt ./Release/
+          - name: Push
+            uses: ludeeus/action-push@0.0.1
