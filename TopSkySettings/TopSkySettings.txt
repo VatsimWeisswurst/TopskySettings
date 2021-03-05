@@ -1,5 +1,6 @@
 Setup_COOPANS=1
 
+Color_Active_Map=100,0,0
 Color_Active_Map_Type_1=140,140,0 //yellow
 Color_Active_Map_Type_2=134,134,135 //grey
 Color_Active_Map_Type_3=128,128,128 //greysector
@@ -291,3 +292,4 @@ STCA_WarningTime_U_Imm=30
 STCA_WarningTime_L_Imm=30
 STCA_FastDiv_Vel_Lat=50
 STCA_Floor=1000
+
