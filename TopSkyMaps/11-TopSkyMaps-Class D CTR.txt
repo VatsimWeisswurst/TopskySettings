@@ -1,4 +1,4 @@
-MAP:Tower CTR
+MAP:Class D (CTR)
 COLOR:RMZ
 FOLDER:EDMM
 STYLE:Solid
