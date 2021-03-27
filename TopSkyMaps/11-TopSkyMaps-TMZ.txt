@@ -1,5 +1,5 @@
 MAP:TMZ
-COLOR:TMZ
+COLOR:Active_Map_Type_20
 FOLDER:EDMM
 STYLE:Solid
 // EDDC
