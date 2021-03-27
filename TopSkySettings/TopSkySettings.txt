@@ -14,6 +14,7 @@ Color_Active_Map=100,0,0
 Color_Active_Map_Type_19=34,62,34 // Green
 Color_Active_Map_Type_20=64,50,43 // Brown
 Color_Active_Sector=0,0,0
+Color_Active_Text_Map=70,70,70
 Color_Assumed=103,193,72
 Color_Background=40,40,40
 Color_CARD_Conflict_Number=0,0,0
@@ -39,7 +40,7 @@ CPDLC_ASP=1
 
 HTTP_SIGMET_Pages=6443
 
-//Color_Active_Text_Map=70,70,70
+//
 //Color_Assumed=0,232,232
 //Color_Concerned=147,147,147
 //Color_Coordination=255,255,255
@@ -130,7 +131,9 @@ Window_SM_LeaveHoldTime=2
 Label_SI_ShowFreq=1
 Label_All_N=0
 Label_ASP_Digits=3
+Label_Field18_Flag_Items=/STS,newbie,noob,n00b,beginner,anfaenger,disabled,disability,impaired,newbe,newbee,fs2020
 Label_GS_Digits=2
+
 Label_Co_SQ=0
 Label_Co_ATYP=0
 Label_Co_ATYPW=0
