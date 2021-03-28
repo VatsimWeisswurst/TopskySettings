@@ -1,5 +1,5 @@
 MAP:Class E
-COLOR:MUCGREEN
+COLOR:Active_Map_Type_19
 FOLDER:EDMM
 STYLE:DashDotDot
 // Alpen FL130
