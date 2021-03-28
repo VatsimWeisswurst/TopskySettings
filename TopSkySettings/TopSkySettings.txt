@@ -214,12 +214,17 @@ AIW=0
 APW=0
 MTCD=0
 STCA=0
+Color_Unconcerned=150,150,150
 
 [_DEL]
 AIW=0
 APW=0
 MTCD=0
 STCA=0
+Color_Unconcerned=150,150,150
+
+[_OBS]
+Color_Unconcerned=150,150,150
 
 [EDDM_]
 AIW_Floor=3500
