@@ -11,6 +11,7 @@ APW_VFR=1
 APW_Buffer_Lat_SepLevel=24500
 
 Color_Active_Map=100,0,0
+Color_Active_Map_Type_18=50,50,50 // Gr[ae]y / MVA
 Color_Active_Map_Type_19=34,62,34 // Green
 Color_Active_Map_Type_20=64,50,43 // Brown
 Color_Active_Sector=0,0,0
