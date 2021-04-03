@@ -79,6 +79,10 @@ Track_HistoryDots=5
 Track_HistoryDots_Max=19
 Track_DivergenceSymbol_Size=8
 
+Divergence_CLAM_DelayTime=120
+Divergence_CLAM_MinCFL=7000
+Divergence_RAM_DCT_DelayTime=90
+
 Shortcut_RadarMenu_Combo=0x00
 
 Label_SI_ShowFreq=1
