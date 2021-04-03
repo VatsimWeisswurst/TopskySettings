@@ -202,12 +202,13 @@ WXR_Echo_dBZ_Med=30
 WXR_Echo_dBZ_Lo=25
 
 [_APP]
-AIW=1
+AIW=0
 
 [_TWR]
 AIW=0
 MTCD=0
 STCA_AlertSound=0
+Color_Unconcerned=150,150,150
 
 [_GND]
 AIW=0
