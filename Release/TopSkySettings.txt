@@ -219,6 +219,7 @@ WXR_Echo_dBZ_Lo=25
 
 [_APP]
 AIW=0
+MTCD=0
 
 [_TWR]
 AIW=0
