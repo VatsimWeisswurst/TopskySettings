@@ -128,7 +128,7 @@ System_TransferConfirmation=1
 System_TaxiTime=10
 System_ProxySounds=0
 
-Track_PredictionLine=1
+Track_PredictionLine=0
 Track_DivergenceSymbol_Size=8
 
 RwyAppLines_Markers=15
@@ -219,6 +219,7 @@ WXR_Echo_dBZ_Lo=25
 
 [_APP]
 AIW=0
+MTCD=0
 
 [_TWR]
 AIW=0
